@@ -39,11 +39,13 @@ public class Algoritmos {
      * Algoritmo de Knuth-Morris-Pratt
      */
     public static ArrayList<Integer> algoritmoKnuthMorrisPratt (String texto, String patron) {
+
         ArrayList<Integer> posiciones = new ArrayList<>();
         int n = texto.length();
         int m = patron.length();
-        int[] pi = preprocesarPatron(patron);
-        a+=4;
+        a+=3;
+        int[] pi = preprocesarPatron(patron); //Se suman las asignaciones de pi y el argumento de la funcion preprocesarPatron
+        a+=2;
 
         int i = 0;
         int j = 0;
@@ -111,11 +113,12 @@ public class Algoritmos {
      */
     public static ArrayList<Integer> algoritmoBoyerMoore(String texto, String patron) {
         ArrayList<Integer> posiciones = new ArrayList<>();
-        int[] tablaSalto = crearTablaSalto(patron);
+        int[] tablaSalto = crearTablaSalto(patron); //Se suman las asignaciones de tablaSalto y el argumento de la funcion crearTablaSalto
+        a+=3;
         int n = texto.length();
         int m = patron.length();
         int i = m - 1;
-        a+=5;
+        a+=3;
         while (i < n) {
             c++;
             int k = i;
@@ -127,7 +130,7 @@ public class Algoritmos {
                 k--;
                 a+=2;
             }
-            c++;//Comp falsa del while
+            c++;//Como falsa del while
             if (j == -1) {
                 c++;
                 posiciones.add(k + 1);
