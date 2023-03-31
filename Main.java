@@ -41,7 +41,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[] patrones = { "ABCDEF", "ABCDEFGHIJKLNMOPQRSTOVXYZ", "ZZZZZ", "ZZZZZZZZZZZZZZZZZZZZZZZZZ", "ABABABA", "ABABABABABABABABABABABABA" };
+        String[] patrones = { "FFDANG", "ABCDEFGHIJKLNMOPQRSTOVXYZ", "ZZZZZ", "ZZZZZZZZZZZZZZZZZZZZZZZZZ", "ABGFCHK", "DBOPOBAJHUABAFGGABABABCDA" };
 
         for (int i = 1; i <= 6; i++) {
             // Texto con base a los archivos (prueba)
