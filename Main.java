@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 public class Main {
 
@@ -24,6 +26,7 @@ public class Main {
             System.out.println("El patrón se encontró en las siguientes posiciones: " + posiciones.toString());
         }
         DecimalFormat df = new DecimalFormat("#.###");
+        df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
     
         System.out.println("Tiempo de ejecución: " + df.format(tiempoDeEjecucion) + " ms");
         // Almacena los resultados en un archivo de texto
