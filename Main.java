@@ -10,10 +10,16 @@ import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 
+
+/*
+ * Fecha Inicio: 12 de Marzo del 2023
+ * Fecha Ultima Modificación: 5 de abril del 2023
+ */
 public class Main {
 
     /*
      * Imprime el resultado del algoritmo
+     * Recibe el nombre del algoritmo, el patrón, el tiempo de ejecución y las posiciones
      */
     public static void imprimirResultado(ArrayList<Integer> posiciones, String nombreAlgoritmo, String patron,
             Double tiempoDeEjecucion) {
@@ -29,6 +35,7 @@ public class Main {
         df.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ENGLISH));
     
         System.out.println("Tiempo de ejecución: " + df.format(tiempoDeEjecucion) + " ms");
+
         // Almacena los resultados en un archivo de texto
         try {
             PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("archivo.txt", true)));
@@ -49,9 +56,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // Patrones a buscar
         String[] patrones = { "FFDANG", "ABCDEFGHIJKLNMOPQRSTOVXYZ", "ZZZZZ", "ZZZZZZZZZZZZZZZZZZZZZZZZZ", "ABGFCHK",
                 "DBOPOBAJHUABAFGGABABABCDA" };
 
+        // Recorre los textos
         for (int i = 1; i <= 6; i++) {
             // Texto con base a los archivos (prueba)
             String rutaArchivo = "textos/texto" + i + ".txt";
@@ -82,6 +91,8 @@ public class Main {
             System.out.println(".............................................................................");
             System.out.println("El tamaño del archivo " + rutaArchivo + " es de " + tamanoBytes + " bytes.");
 
+
+            // Recorre los patrones,  se imprimen los resultados y se mide el tiempo de ejecución
             for (String patron : patrones) {
 
                 // Algoritmo Fuerza Bruta
